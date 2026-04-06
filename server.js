@@ -7,8 +7,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Backend is running");
+});
+
 app.post("/contact", async (req, res) => {
   const { name, email, phone, message } = req.body;
+
+  if (!name || !email || !message) {
+    return res.status(400).send("Missing required fields");
+  }
 
   try {
     const transporter = nodemailer.createTransport({
