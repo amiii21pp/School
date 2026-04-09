@@ -1,14 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  overflow-x: hidden;
   font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: white;
 }
 
 html {
   scroll-behavior: smooth;
 }
-
 .hero {
   min-height: 90vh;
   display: flex;
@@ -20,20 +22,21 @@ html {
   background-repeat: no-repeat;
 }
 
+.hero-content {
+  max-width: 600px;
+}
+
 .hero-content h1 {
-  font-size: 50px;
-  margin-bottom: 10px;
+  font-size: clamp(28px, 5vw, 50px);
 }
 
 .hero-content p {
-  font-size: 18px;
-  color: #cbd5f5;
+  font-size: clamp(14px, 2.5vw, 18px);
 }
 
 .section {
-  padding: 80px 60px;
+  padding: 80px 5%;
 }
-
 .section h2 {
   font-size: 32px;
   margin-bottom: 30px;
@@ -41,16 +44,17 @@ html {
 
 .cards {
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .card {
+  width: 100%;
+  max-width: 300px;
   background: #1e293b;
   padding: 20px;
   border-radius: 10px;
-  width: 250px;
-  transition: 0.3s;
 }
 
 .card:hover {
@@ -63,27 +67,44 @@ html {
   flex-direction: column;
   gap: 15px;
   max-width: 400px;
+  width: 100%;
 }
 
 .contact-form input,
 .contact-form textarea {
+  width: 100%;
   padding: 10px;
-  border: none;
   border-radius: 5px;
-  outline: none;
+  border: none;
 }
 
 .contact-form button {
   padding: 12px;
-  background: #38bdf8;
+  background: #40bff5;
   border: none;
   border-radius: 5px;
-  color: black;
   font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
 .contact-form button:hover {
   background: #0ea5e9;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 70vh;
+    padding: 0 20px;
+  }
+
+  .section {
+    padding: 60px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
 }
