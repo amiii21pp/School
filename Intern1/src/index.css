@@ -10,14 +10,14 @@ html {
 }
 
 .hero {
-  height: 90vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
-  padding: 0 60px;
-  background-size: 100%;
+  padding: 0 5%;
+
+  background-size: cover;
   background-position: center;
-  color: white;
-  transition: background-image 1s ease-in-out;
+  background-repeat: no-repeat;
 }
 
 .hero-content h1 {
